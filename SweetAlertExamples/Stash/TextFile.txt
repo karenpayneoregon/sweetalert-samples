@@ -1,0 +1,21 @@
+﻿<script type="text/javascript">
+    window.onload = function () {
+        Swal.fire({
+            icon: 'info',
+            title: '@ViewData["MessageFromOnGet"]',
+            customClass: 'swal-sm',
+            showConfirmButton: false,
+            timer: 500
+        })
+    };
+</script>
+
+
+https://sweetalert2.github.io
+https://sweetalert2.github.io/#input-types
+
+https://sweetalert2.github.io/#themes
+
+
+
+
