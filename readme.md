@@ -541,3 +541,7 @@ Clone the following GitHub repository.
 ### Requires
 
 Microsoft Visual Studio 2022
+
+## Article location
+
+[DEV site](https://dev.to/karenpayneoregon/using-sweetalert2-for-aspnet-corerazor-pages-25lf)
