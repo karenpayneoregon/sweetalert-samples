@@ -31,7 +31,7 @@ $SweetDialogs = function () {
                 showCancelButton: true,
                 confirmButtonText: 'Save',
                 denyButtonText: `Don't save`,
-                allowOutsideClick: false,
+                allowOutsideClick: false
             }).then((result) => {
                 if (result.isConfirmed) {
                     $("#_confirmation1").val(1);
@@ -68,6 +68,8 @@ $SweetDialogs = function () {
                 confirmButtonText: 'Yes, delete it!',
                 cancelButtonText: 'No, cancel!',
                 allowOutsideClick: false,
+                width: 340,
+                color: '#0078d4'
             }).then((result) => {
                 if (result.isConfirmed) {
                     $("#_confirmation").val(true);
