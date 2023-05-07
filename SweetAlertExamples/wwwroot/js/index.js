@@ -43,18 +43,20 @@ function GetPassword() {
             input: 'password',
             inputLabel: 'Password',
             inputPlaceholder: 'Enter your password',
+            confirmButtonColor: '#3085d6',
             inputAttributes: {
                 maxlength: 10,
                 autocapitalize: 'off',
                 autocorrect: 'off'
             }
-        })
+        });
 
 
         if (password) {
             $("#_password").val(password);
-            $("#form1").submit(); 
-
+            $("#form1").submit();
+        } else {
+            $("#form1").submit();
         }
 
     })();

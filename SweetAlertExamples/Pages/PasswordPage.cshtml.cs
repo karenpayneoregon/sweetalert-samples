@@ -14,7 +14,15 @@ namespace SweetAlertExamples.Pages
 
         public void OnPost()
         {
-            Log.Information("Password: {P1}", Password);
+            if (string.IsNullOrWhiteSpace(Password))
+            {
+                Log.Warning("No password entered");
+            }
+            else
+            {
+                Log.Information("Password: {P1}", Password);
+            }
+            
         }
     }
 }
