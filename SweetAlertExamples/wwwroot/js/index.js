@@ -10,8 +10,10 @@ function GetIpAddressInput() {
 
         const { value: ipAddress } = await Swal.fire({
             title: 'Enter your IP address',
+            target: document.getElementById('mention'),
+            position: 'top-start',
             input: 'text',
-            inputLabel: 'Your IP address',
+            inputLabel: 'Your IP address  - uses target property',
             inputValue: inputValue,
             showCancelButton: true,
             inputValidator: (value) => {
