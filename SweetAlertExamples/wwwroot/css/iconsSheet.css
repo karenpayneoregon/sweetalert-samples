@@ -1,0 +1,43 @@
+﻿.icon-class {
+    font-size: 10px;
+}
+
+.text {
+    font-size: 15px;
+}
+
+@media screen and (min-width: 761px) {
+    .swal-wide {
+        width: 40% !important;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .swal-wide {
+        width: 100% !important;
+    }
+}
+
+.checkmark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: solid 2px green;
+    display: block;
+    stroke-width: 2;
+    stroke: green;
+    stroke-miterlimit: 10;
+    stroke-dashoffset: 0;
+    margin: 10% auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.textDiv {
+    padding-left: 10px;
+    padding-top: 16px;
+    font-family: 'Gill Sans', sans-serif;
+}
