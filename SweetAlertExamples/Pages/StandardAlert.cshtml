@@ -2,11 +2,20 @@
 @model SweetAlertExamples.Pages.StandardAlertModel
 @{
 }
+
+@*
+    if you have multiple pop-ups where there is a mixture of blurred and no blurred use the following not to blur
+    
+    Swal.mixin({
+            backdrop: false,
+
+*@
 <style>
     body.swal2-shown > [aria-hidden="true"] {
         transition: 0.1s filter;
         filter: blur(10px);
     }
+
 </style>
 
 <div class="container">
@@ -47,7 +56,15 @@
                 <button type="button"
                         id="showAlert4"
                         class="btn btn-primary">
-                    Blurred backdrop
+                    Blurred backdrop 1
+                </button>
+            </div>
+            
+            <div class="row">
+                <button type="button"
+                        id="showAlert5"
+                        class="btn btn-primary">
+                    Blurred backdrop 2
                 </button>
             </div>
         </div>
@@ -65,11 +82,27 @@
     });
 
     document.getElementById('showAlert2').addEventListener("click", function () {
-        Swal.fire('Refreshing change from a standard alert ');
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            backdrop: false,
+            customClass: {
+                confirmButton: 'btn btn-primary'
+            },
+            buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+            title: 'No Icon',
+            html: "<div class = 'text-success fw-bold border border-success bg-light'>All done</div>",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            reverseButtons: true
+        });
+
     });
 
     document.getElementById('showAlert3').addEventListener("click", function () {
         const swalWithBootstrapButtons = Swal.mixin({
+            backdrop: false,
             customClass: {
                 confirmButton: 'btn btn-danger'
             },
@@ -91,5 +124,13 @@
         Swal.fire({ title: 'We control what you can see!!!' });
     });
 
+    document.getElementById('showAlert5').addEventListener("click", function () {
+
+        Swal.fire(
+                'Good job!',
+                'You clicked the button!'
+            );
+            $(".swal2-modal").css('background-color', 'aliceblue');
+    });
   
 </script>
