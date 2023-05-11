@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Dummy submit";
+}
+
+<link rel="stylesheet" href="~/lib/limonte-sweetalert2/sweetalert2.min.css" />
+<script src="lib/limonte-sweetalert2/sweetalert2.all.min.js"></script>
+
+<div class="container">
+    
+    <div class="alert alert-primary" role="alert">
+        Example to display message on document load based on setting a property
+    </div>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="SuccessMessage" id="message"/>
+
+        <input type="submit" 
+               class="btn btn-primary" 
+               value="Submit" 
+               asp-page-handler="Submit"/>
+
+        <input type="submit" 
+               class="btn btn-primary" 
+               value="Submit" asp-page-handler="Submit1"/>
+
+    </form>
+
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        window.onload = function () {
+
+            let msg = $('#message').val();
+
+            if (msg.length > 0) {
+
+                const popupConfiguration = Swal.mixin({
+                    customClass: { confirmButton: 'btn btn-primary' },
+                    buttonsStyling: false
+                });
+
+                popupConfiguration.fire({
+                    icon: '',
+                    text: msg,
+                    allowOutsideClick: false,
+                    width: '200px',
+                    height: '300px'
+                });
+            } else {
+                console.log('Nada');
+            }
+        };
+    </script>
+
+}
